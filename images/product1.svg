@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  <rect width="100%" height="100%" fill="#f8efe8"/>
+  <rect x="60" y="80" width="680" height="360" rx="16" fill="#d87b53" opacity="0.12"/>
+  <text x="50%" y="50%" font-size="36" text-anchor="middle" fill="#8a4a32" font-family="sans-serif">Terracotta Mixing Bowl</text>
+</svg>

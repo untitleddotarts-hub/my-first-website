@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
+  <!-- subtle pottery motif pattern for page background -->
+  <defs>
+    <g id="jar">
+      <ellipse cx="30" cy="30" rx="26" ry="18" fill="#B55A30" opacity="0.12"/>
+      <path d="M10 30 q20 40 40 0" fill="#B55A30" opacity="0.08"/>
+      <rect x="18" y="8" width="24" height="16" rx="6" fill="#B55A30" opacity="0.10"/>
+    </g>
+    <g id="bowl">
+      <ellipse cx="30" cy="30" rx="30" ry="12" fill="#8A4A32" opacity="0.08"/>
+      <path d="M0 30 q30 40 60 0" fill="#8A4A32" opacity="0.06"/>
+    </g>
+  </defs>
+
+  <rect width="100%" height="100%" fill="transparent"/>
+
+  <!-- arrange small motifs across the tile -->
+  <use href="#jar" x="20" y="40"/>
+  <use href="#bowl" x="120" y="60"/>
+  <use href="#jar" x="240" y="20"/>
+  <use href="#bowl" x="320" y="120"/>
+  <use href="#jar" x="60" y="200"/>
+  <use href="#bowl" x="200" y="240"/>
+  <use href="#jar" x="300" y="300"/>
+  <use href="#bowl" x="20" y="320"/>
+
+</svg>

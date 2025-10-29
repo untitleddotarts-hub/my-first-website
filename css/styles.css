@@ -1,0 +1,154 @@
+/* Enhanced mobile styles for Snapdeal-like pottery site */
+@media (max-width:600px) {
+  body { font-size: 16px; }
+  .site-header, .snapdeal-header { padding: 0 0 8px 0; }
+  .header-inner { flex-direction: column; align-items: stretch; padding: 8px 0; }
+  .header-left, .header-center, .header-right { justify-content: flex-start; margin-bottom: 8px; }
+  .search-bar { width: 100%; font-size: 17px; margin-bottom: 8px; }
+  .icon-link { font-size: 26px; margin-left: 12px; }
+  .snapdeal-nav { flex-direction: column; border-bottom: none; background: #fff3e0; }
+  .snapdeal-nav a { padding: 12px 10px; font-size: 17px; border-bottom: 1px solid #ffe0b2; }
+  .promo-banner, .snapdeal-banner { flex-direction: column; align-items: flex-start; padding: 14px 10px; }
+  .promo-banner img, .snapdeal-banner img { margin: 0 0 12px 0; height: 60px; width: 60px; }
+  .snapdeal-grid { margin: 0; }
+  .product-grid { grid-template-columns: 1fr; gap: 14px; }
+  .product-card { padding: 10px; }
+  .product-card img { height: 120px; }
+  .sidebar, .snapdeal-category-layout .sidebar { width: 100%; margin-bottom: 12px; padding: 10px; border-radius: 8px; }
+  .snapdeal-category-layout { flex-direction: column; gap: 0; }
+  .sort-row { flex-direction: column; gap: 8px; }
+  .footer-inner { flex-direction: column; gap: 10px; padding: 0 8px; }
+  .footer-col { margin-bottom: 8px; }
+  .modal-content { max-width: 98vw; padding: 10px; }
+}
+/* Snapdeal-style header and nav */
+.snapdeal-header {
+  background: linear-gradient(90deg, #e53935 0%, #ffb300 60%, #fff 100%);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 0;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; }
+.header-left, .header-center, .header-right { display: flex; align-items: center; }
+.header-center { flex: 1; justify-content: center; }
+.search-bar {
+  width: 340px; max-width: 90vw; padding: 8px 14px; border-radius: 20px; border: 1px solid #eee; font-size: 16px;
+}
+.icon-link { margin-left: 18px; color: #fff; text-decoration: none; font-size: 22px; }
+.icon-link:hover { opacity: 0.8; }
+.snapdeal-nav {
+  display: flex; justify-content: center; background: #fff3e0; border-bottom: 1px solid #ffe0b2; }
+.snapdeal-nav a {
+  color: #e53935; font-weight: 600; text-decoration: none; padding: 12px 24px; font-size: 16px; transition: background .15s; }
+.snapdeal-nav a:hover { background: #ffe0b2; }
+
+/* Snapdeal-style promo banner */
+.snapdeal-banner {
+  display: flex; align-items: center; background: linear-gradient(90deg,#fffde7 0%,#ffe0b2 100%); border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); padding: 18px 24px; margin: 24px 0; }
+.promo-copy { flex: 1; }
+.promo-badge { background: #e53935; color: #fff; font-weight: 700; border-radius: 6px; padding: 4px 12px; display: inline-block; margin-bottom: 8px; }
+
+/* Snapdeal-style product grid */
+.snapdeal-grid { margin: 0 0 32px 0; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 18px; margin: 18px 0; }
+.product-card { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); padding: 14px; display: flex; flex-direction: column; border: 1px solid #ffe0b2; }
+.product-card img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; }
+.product-card h4 { margin: 10px 0 6px; font-size: 18px; color: #e53935; }
+.product-card .price { font-weight: 700; color: #ffb300; font-size: 16px; }
+.product-card .desc { color: #444; font-size: 14px; margin-bottom: 8px; }
+.product-card .card-actions { margin-top: auto; }
+.product-card .btn { background: #e53935; color: #fff; border: none; border-radius: 6px; padding: 8px 14px; cursor: pointer; font-weight: 600; }
+.product-card .btn:hover { background: #ffb300; color: #fff; }
+
+/* Snapdeal-style sidebar and filters */
+.snapdeal-category-layout { display: flex; gap: 32px; }
+.sidebar { width: 220px; background: #fffde7; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); padding: 18px; }
+.sidebar-filters h4 { margin-top: 0; color: #e53935; }
+.sidebar-filters label { display: block; margin-bottom: 12px; font-size: 15px; }
+.sidebar-filters select { padding: 6px 10px; border-radius: 6px; border: 1px solid #ffe0b2; margin-left: 8px; }
+
+/* Snapdeal-style footer */
+.snapdeal-footer { background: #fff3e0; border-top: 2px solid #ffe0b2; padding: 32px 0; }
+.footer-inner { display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; }
+.footer-col { flex: 1 1 180px; margin-bottom: 12px; }
+.footer-col strong { color: #e53935; font-size: 16px; }
+.footer-col a { color: #e53935; text-decoration: none; margin-right: 8px; font-size: 15px; }
+.footer-col a:hover { text-decoration: underline; }
+.footer-col small { color: #888; }
+
+@media (max-width:900px) {
+  .snapdeal-category-layout { flex-direction: column; }
+  .sidebar { width: 100%; margin-bottom: 18px; }
+  .footer-inner { flex-direction: column; gap: 12px; }
+}
+@media (max-width:700px) {
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .snapdeal-nav { flex-direction: column; }
+  .snapdeal-nav a { padding: 10px 12px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .sidebar { padding: 12px; }
+}
+.root{
+  --accent:#B55A30;
+  --muted:#6b6b6b;
+  --bg:#fffdfa;
+  --max-width:1100px;
+  --radius:8px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:#222;line-height:1.55}
+.container{max-width:var(--max-width);margin:0 auto;padding:24px}
+.site-header{
+  background: linear-gradient(90deg, #FF8A65 0%, #FFD54F 45%, #80CBC4 100%);
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-bottom: 0;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+/* .brand-title and .tagline styles removed, restoring previous inline styling for brand name */
+.main-nav a{margin-left:18px;color:#fff;text-decoration:none;transition:opacity .15s}
+.main-nav a:hover{opacity:0.85}
+.hero{padding:48px 0;background:linear-gradient(180deg, rgba(181,90,48,0.06), transparent);border-bottom:1px solid #f1e7e0}
+.hero h2{font-size:36px;margin:0}
+.lead{max-width:70%;margin-top:12px;color:#333}
+.hero-cta{margin-top:18px}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:6px;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+
+.products-section h3{margin-top:0}
+.filters{display:flex;gap:12px;align-items:center;margin:12px 0}
+.filters input, .filters select{padding:8px;border-radius:6px;border:1px solid #ddd}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin:18px 0}
+.product-card{background:#fff;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,0.04);padding:12px;display:flex;flex-direction:column}
+.product-card img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+.product-card h4{margin:10px 0 6px}
+.price{font-weight:700;color:var(--accent)}
+.meta{color:var(--muted);font-size:13px}
+.product-card button{margin-top:auto;background:transparent;border:1px solid var(--accent);color:var(--accent);padding:8px;border-radius:6px;cursor:pointer}
+
+.story h4{margin-bottom:6px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;padding:24px 0}
+.feature{background:#fff;padding:16px;border-radius:8px}
+
+.site-footer{border-top:1px solid #eee;padding:18px 0;margin-top:32px;background:transparent}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+.contact-card{background:#fff;padding:14px;border-radius:8px}
+.contact-form label{display:block;margin-bottom:10px}
+.contact-form input,.contact-form textarea{width:100%;padding:8px;border:1px solid #ddd;border-radius:6px}
+
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.4)}
+.modal[aria-hidden="false"]{display:flex}
+.modal-content{background:#fff;padding:20px;border-radius:10px;max-width:760px;width:94%;box-shadow:0 10px 30px rgba(0,0,0,0.2)}
+.modal-close{background:transparent;border:0;color:var(--muted);float:right}
+
+@media (max-width:700px){
+  .lead{max-width:100%}
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .main-nav{margin-top:12px}
+  .footer-inner{flex-direction:column;gap:8px}
+}
+
+/* small utilities */
+.hidden{display:none}

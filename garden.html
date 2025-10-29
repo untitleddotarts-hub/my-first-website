@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Garden Items — Mana Pottery</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header class="site-header snapdeal-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <a class="brand" href="index.html">
+      <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:40px;vertical-align:middle;margin-right:12px;">
+      <span class="brand-title">Mana Pottery</span>
+      <span class="tagline">Where Hands Shape Heritage</span>
+        </a>
+      </div>
+      <div class="header-center">
+        <input type="text" class="search-bar" placeholder="Search pottery, kitchenware, garden...">
+      </div>
+      <div class="header-right">
+        <a href="#" class="icon-link" title="Cart"><span style="font-size:22px;">🛒</span></a>
+        <a href="#" class="icon-link" title="Sign In"><span style="font-size:22px;">👤</span></a>
+      </div>
+    </div>
+    <nav class="snapdeal-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="deals.html">Deals</a>
+      <a href="kitchen.html">Kitchen Items</a>
+      <a href="garden.html">Garden Items</a>
+      <a href="decorative.html">Decorative Items</a>
+      <a href="contact.html">Contact (Praveen)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero small">
+      <div class="container">
+        <h2>Garden Items</h2>
+        <p class="lead">Decorative and functional pieces for your garden, patio, and outdoor spaces. Frost-rated options available on select items.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="snapdeal-category-layout">
+        <aside class="sidebar">
+          <div class="sidebar-filters">
+            <h4>Filter by</h4>
+            <label>Type:
+              <select id="gardenType">
+                <option value="all">All</option>
+                <option value="Planter">Planters</option>
+                <option value="Decorative">Decorative</option>
+              </select>
+            </label>
+            <label>Price:
+              <select id="priceFilter">
+                <option value="all">All</option>
+                <option value="low">Under $30</option>
+                <option value="mid">$30 - $70</option>
+                <option value="high">Above $70</option>
+              </select>
+            </label>
+          </div>
+        </aside>
+        <main class="content">
+          <div class="sort-row">
+            <h3 style="margin:0">Garden Collection</h3>
+            <div style="display:flex;gap:10px;align-items:center">
+              <input id="searchInput" placeholder="Search products">
+              <select id="sortSelect">
+                <option value="default">Sort</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+          <div id="gardenGrid" class="product-grid"></div>
+        </main>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer snapdeal-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <strong>Mana Pottery</strong>
+        <p>Where Hands Shape Heritage</p>
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <strong>Shop</strong>
+        <p><a href="deals.html">Deals</a> | <a href="kitchen.html">Kitchen</a> | <a href="garden.html">Garden</a> | <a href="decorative.html">Decorative</a></p>
+      </div>
+      <div class="footer-col">
+        <strong>Info</strong>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+        <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+      </div>
+      <div class="footer-col">
+        <small>&copy; Mana Pottery — All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+        <div id="productModal" class="modal" aria-hidden="true">
+          <div class="modal-content" role="dialog" aria-modal="true">
+            <button id="modalClose" class="modal-close">Close</button>
+            <div id="modalBody"></div>
+          </div>
+        </div>
+      </body>
+      </html>

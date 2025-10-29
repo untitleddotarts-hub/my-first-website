@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  <rect width="100%" height="100%" fill="#fff7f3"/>
+  <rect x="40" y="70" width="720" height="420" rx="14" fill="#b55a30" opacity="0.09"/>
+  <text x="50%" y="52%" font-size="34" text-anchor="middle" fill="#7a3a28" font-family="sans-serif">Handmade Serving Platter</text>
+</svg>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mana Pottery — Where Hands Shape Heritage</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Mana Pottery — handcrafted ceramics, kitchenware, garden pieces and decorative items. Where hands shape heritage.">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header class="site-header snapdeal-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <a class="brand" href="index.html">
+      <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:32px;vertical-align:middle;margin-right:8px;">
+      <span style="font-size:22px;font-weight:700;vertical-align:middle;color:#fff;">Mana Pottery</span>
+        </a>
+      </div>
+      <div class="header-center">
+        <input type="text" class="search-bar" placeholder="Search pottery, kitchenware, garden...">
+      </div>
+      <div class="header-right">
+        <a href="#" class="icon-link" title="Cart"><span style="font-size:22px;">🛒</span></a>
+        <a href="#" class="icon-link" title="Sign In"><span style="font-size:22px;">👤</span></a>
+      </div>
+    </div>
+    <nav class="snapdeal-nav">
+      <a href="about.html">About Us</a>
+      <a href="deals.html">Deals</a>
+      <a href="kitchen.html">Kitchen Items</a>
+      <a href="garden.html">Garden Items</a>
+      <a href="decorative.html">Decorative Items</a>
+      <a href="contact.html">Contact (Praveen)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Mana Pottery</h2>
+        <p class="lead">Heirloom-quality pottery made with time-honored techniques. Functional, beautiful, and made to last. Browse our curated collection — from kitchen essentials to garden statement pieces.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#product-area">Shop All Products</a>
+          <a class="btn ghost" href="about.html">Learn Our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="promo-banner snapdeal-banner">
+        <img src="images/product5.svg" alt="Featured: Heritage Bird Bath" style="height:80px;width:80px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-right:18px;">
+        <div class="promo-copy">
+          <div class="promo-badge">15% OFF</div>
+          <h3>Seasonal Pottery Deals</h3>
+          <p>Shop our bestsellers and save on garden, kitchen, and decorative pieces. Limited time only!</p>
+          <div style="margin-top:10px"><a class="btn" href="deals.html">See Deals</a></div>
+        </div>
+      </div>
+
+      <section id="product-area" class="snapdeal-grid">
+        <h2 style="margin:24px 0 12px 0;font-size:1.6em;font-weight:600;">Trending Pottery</h2>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+    </div>
+
+    <section class="story container">
+      <h3>Our Story</h3>
+      <p>Mana Pottery is a family atelier rooted in an ancient pottery village. For three generations we've worked clay by hand, passing down forms, glazes, and the quiet discipline of the wheel. Each piece is a negotiation between intent and material — practical, handcrafted forms that carry the traces of the hands that made them.</p>
+
+      <h4>Craftsmanship & Process</h4>
+      <p>We mix our own clay and glazes from locally sourced minerals. Pieces are wheel-thrown or hand-built, then bisque-fired, glazed, and fired again in an electric kiln. Small-batch production ensures quality control and allows us to offer customization on many pieces.</p>
+
+      <h4>Design Philosophy</h4>
+      <p>We design for longevity. Our kitchenware is oven- and microwave-friendly, our gardenware is frost-resistant when labeled, and our decorative ceramics are made with archival glazes. We aim to create objects that become part of daily rituals — vessels for food, light, and memory.</p>
+    </section>
+
+    <section class="features container">
+      <div class="feature">
+        <h4>Sustainable</h4>
+        <p>We reclaim trims, recycle clay, and use low-impact glazes wherever possible.</p>
+      </div>
+      <div class="feature">
+        <h4>Made by Hand</h4>
+        <p>No mass-production. Each piece carries slight variations — a sign of authenticity.</p>
+      </div>
+      <div class="feature">
+        <h4>Custom Orders</h4>
+        <p>We accept commissions for restaurants, gardens, and collectors. Contact Praveen for details.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer snapdeal-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <strong>Mana Pottery</strong>
+        <p>Where Hands Shape Heritage</p>
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
+      </div>
+      <div class="footer-col">
+        <strong>Shop</strong>
+        <p><a href="deals.html">Deals</a> | <a href="kitchen.html">Kitchen</a> | <a href="garden.html">Garden</a> | <a href="decorative.html">Decorative</a></p>
+      </div>
+      <div class="footer-col">
+        <strong>Info</strong>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+        <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+      </div>
+      <div class="footer-col">
+        <small>&copy; Mana Pottery — All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- product detail modal -->
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close">Close</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+</body>
+</html>
