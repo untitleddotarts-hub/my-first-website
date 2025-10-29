@@ -1,3 +1,52 @@
+/* Auth pages styling */
+.auth-section {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+}
+.auth-section h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #e53935;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.auth-form label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.auth-form input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+.auth-form button {
+  background: linear-gradient(90deg, #e53935 0%, #ffb300 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 1px 6px rgba(229,57,53,0.10);
+}
+.auth-section p {
+  text-align: center;
+  margin-top: 18px;
+}
+.auth-section a {
+  color: #e53935;
+  text-decoration: underline;
+}
 /* Enhanced mobile styles for Snapdeal-like pottery site */
 @media (max-width:600px) {
   body { font-size: 16px; }
