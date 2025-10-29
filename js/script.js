@@ -24,10 +24,23 @@ function createCard(p){
       <p class="desc">${p.description}</p>
       <div class="card-actions">
         <button class="btn" data-id="${p.id}">View</button>
+        <button class="btn add-cart-btn" data-id="${p.id}">Add to Cart</button>
       </div>
     </div>
   `;
   el.querySelector('button').addEventListener('click', ()=> openModal(p.id));
+  el.querySelector('.add-cart-btn').addEventListener('click', ()=> {
+    // Add to cart logic (always add 1)
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const exists = cart.find(item => item.id === p.id);
+    if (!exists) {
+      cart.push({ id: p.id, name: p.name, price: p.price, img: p.img, qty: 1 });
+    } else {
+      exists.qty += 1;
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('Added to cart!');
+  });
   return el;
 }
 
