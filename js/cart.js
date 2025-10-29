@@ -34,6 +34,23 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Please select Cash on Delivery (COD) to place your order.');
       return;
     }
-    alert('Order placed! Our team will contact you for COD.');
+    // Prepare order details
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    let orderDetails = cart.map(item => `${item.name} (Qty: ${item.qty}) - ₹${item.price.toFixed(2)}`).join('\n');
+    let grandTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+    // Send email via EmailJS
+    emailjs.init('user_untitleddotarts'); // Replace with your EmailJS User ID if needed
+    emailjs.send('service_lyznszo', 'template_njnvhgp', {
+      to_email: 'untitleddotarts@gmail.com',
+      order_list: orderDetails,
+      total: `₹${grandTotal.toFixed(2)}`,
+      payment: 'Cash on Delivery (COD)'
+    }).then(function(response) {
+      alert('Order placed! You will be contacted for COD.');
+      localStorage.removeItem('cart');
+      window.location.reload();
+    }, function(error) {
+      alert('Order could not be sent. Please try again later.');
+    });
   });
 });
