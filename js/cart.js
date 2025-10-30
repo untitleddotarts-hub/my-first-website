@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let grandTotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
     // Send email via EmailJS
     emailjs.init('user_untitleddotarts'); // Replace with your EmailJS User ID if needed
-  emailjs.send('service_6nwb2z1', 'template_njnvhgp', {
+    emailjs.send('service_dccqdir', 'template_ohnglkc', {
       to_email: 'untitleddotarts@gmail.com',
       order_list: orderDetails,
       total: `₹${grandTotal.toFixed(2)}`,
