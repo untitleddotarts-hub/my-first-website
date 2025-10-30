@@ -28,7 +28,10 @@ function createCard(p){
       </div>
     </div>
   `;
-  el.querySelector('button').addEventListener('click', ()=> openModal(p.id));
+  // Add View button click event
+  el.querySelector('button:not(.add-cart-btn)').addEventListener('click', ()=> openModal(p.id));
+  
+  // Add to Cart button click event
   el.querySelector('.add-cart-btn').addEventListener('click', ()=> {
     // Add to cart logic (always add 1)
     let cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -40,6 +43,7 @@ function createCard(p){
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     alert('Added to cart!');
+    console.log('Current cart:', cart);  // Debug line
   });
   return el;
 }
