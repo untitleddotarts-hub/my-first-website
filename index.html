@@ -3,37 +3,40 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Mana Pottery </title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Mana Pottery</title>
   <meta name="description" content="Mana Pottery — handcrafted ceramics, kitchenware, garden pieces and decorative items. Where hands shape heritage.">
+  <link rel="stylesheet" href="css/styles.css">
   <script defer src="js/script.js"></script>
 </head>
 <body>
   <header class="site-header snapdeal-header">
+    <section id="welcome-section" class="welcome-section"></section>
     <div class="container header-inner">
       <div class="header-left">
         <a class="brand" href="index.html">
-      <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:32px;vertical-align:middle;margin-right:8px;">
-      <span style="font-size:22px;font-weight:700;vertical-align:middle;color:#fff;">Mana Pottery</span>
+          <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:32px;vertical-align:middle;margin-right:8px;">
+          <span style="font-size:22px;font-weight:700;vertical-align:middle;color:#fff;">Mana Pottery</span>
         </a>
       </div>
       <div class="header-center">
         <input type="text" class="search-bar" placeholder="Search pottery, kitchenware, garden...">
       </div>
       <div class="header-right">
-        <a href="#" class="icon-link" title="Cart"><span style="font-size:22px;">🛒</span></a>
-        <a href="#" class="icon-link" title="Sign In"><span style="font-size:22px;">👤</span></a>
+        <a href="cart.html" class="icon-link" title="Cart"><span style="font-size:22px;">🛒</span></a>
+        <!-- 👇 this is the link that will dynamically update when user logs in -->
+        <a id="auth-link" href="signin.html" class="icon-link" title="Account"><span style="font-size:22px;">👤</span></a>
       </div>
     </div>
+
     <nav class="snapdeal-nav">
-  <a href="about.html">About Us</a>
-  <a href="deals.html">Deals</a>
-  <a href="kitchen.html">Kitchen Items</a>
-  <a href="garden.html">Garden Items</a>
-  <a href="decorative.html">Decorative Items</a>
-  <a href="contact.html">Contact (Praveen)</a>
-  <a href="signin.html">Sign In</a>
-  <a href="cart.html">Cart</a>
+      <a href="about.html">About Us</a>
+      <a href="deals.html">Deals</a>
+      <a href="kitchen.html">Kitchen Items</a>
+      <a href="garden.html">Garden Items</a>
+      <a href="decorative.html">Decorative Items</a>
+      <a href="contact.html">Contact (Praveen)</a>
+      <a id="auth_link" href="signin.html">👤 Sign In</a>
+      <a href="cart.html">Cart</a>
     </nav>
   </header>
 
@@ -84,14 +87,13 @@
       </div>
       <div class="feature">
         <h4>Made by Hand</h4>
-        <p>No mass-production. Each piece carries slight variations — a sign of authenticity.</p>
+        <p>No mass production. Each piece carries slight variations — a sign of authenticity.</p>
       </div>
       <div class="feature">
         <h4>Custom Orders</h4>
         <p>We accept commissions for restaurants, gardens, and collectors. Contact Praveen for details.</p>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer snapdeal-footer">
@@ -116,7 +118,7 @@
     </div>
   </footer>
 
-  <!-- product detail modal -->
+  <!-- Product modal -->
   <div id="productModal" class="modal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true">
       <button id="modalClose" class="modal-close">Close</button>
@@ -124,5 +126,7 @@
     </div>
   </div>
 
+  <!-- ✅ Shared authentication script -->
+  <script src="js/auth.js"></script>
 </body>
 </html>

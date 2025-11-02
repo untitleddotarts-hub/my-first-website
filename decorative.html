@@ -6,40 +6,143 @@
   <title>Decorative Items — Mana Pottery</title>
   <link rel="stylesheet" href="css/styles.css">
   <script defer src="js/script.js"></script>
+  <script defer src="js/auth.js"></script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header snapdeal-header">
+    <section id="welcome-section" class="welcome-section"></section>
+
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <h1>Mana Pottery</h1>
-        <p class="tagline">Where Hands Shape Heritage</p>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="deals.html">Deals</a>
-        <a href="kitchen.html">Kitchen Items</a>
-        <a href="garden.html">Garden Items</a>
-        <a href="contact.html">Contact (Praveen)</a>
-      </nav>
+      <div class="header-left">
+        <a class="brand" href="index.html">
+          <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:32px;vertical-align:middle;margin-right:8px;">
+          <span style="font-size:22px;font-weight:700;vertical-align:middle;color:#fff;">Mana Pottery</span>
+        </a>
+      </div>
+
+      <div class="header-center">
+        <input type="text" class="search-bar" placeholder="Search decorative items...">
+      </div>
+
+      <div class="header-right">
+        <a href="cart.html" class="icon-link" title="Cart">🛒</a>
+        <a id="auth-link" href="signin.html" class="icon-link" title="Sign In">👤</a>
+      </div>
     </div>
+
+    <nav class="snapdeal-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="deals.html">Deals</a>
+      <a href="kitchen.html">Kitchen Items</a>
+      <a href="garden.html">Garden Items</a>
+      <a href="decorative.html">Decorative Items</a>
+      <a href="contact.html">Contact (Praveen)</a>
+      <a id="auth_link" href="signin.html">👤 Sign In</a>
+      <a href="cart.html">Cart</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <h2>Decorative Items</h2>
-    <p>Unique decorative ceramics to enliven interiors — vases, plates, hangings, and candle-holders.</p>
-    <div id="decorativeGrid" class="product-grid"></div>
+  <main>
+    <section class="hero small">
+      <div class="container">
+        <h2>Decorative Items</h2>
+        <p class="lead">Unique handmade ceramics to beautify interiors — vases, wall plates, candle-holders, and art pieces.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="snapdeal-category-layout">
+        <aside class="sidebar">
+          <div class="sidebar-filters">
+            <h4>Filter by</h4>
+            <label>Type:
+              <select id="decorativeType">
+                <option value="all">All</option>
+                <option value="Vase">Vases</option>
+                <option value="Plate">Plates</option>
+                <option value="Candle">Candle Holders</option>
+              </select>
+            </label>
+            <label>Price:
+              <select id="priceFilter">
+                <option value="all">All</option>
+                <option value="low">Under ₹800</option>
+                <option value="mid">₹800 - ₹2000</option>
+                <option value="high">Above ₹2000</option>
+              </select>
+            </label>
+          </div>
+        </aside>
+
+        <main class="content">
+          <div class="sort-row">
+            <h3 style="margin:0">Decorative Collection</h3>
+            <div style="display:flex;gap:10px;align-items:center">
+              <input id="searchInput" placeholder="Search items...">
+              <select id="sortSelect">
+                <option value="default">Sort</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+          <div id="decorativeGrid" class="product-grid"></div>
+        </main>
+      </div>
+    </div>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer snapdeal-footer">
     <div class="container footer-inner">
-      <div>
+      <div class="footer-col">
         <strong>Mana Pottery</strong>
+        <p>Where Hands Shape Heritage</p>
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
       </div>
-      <div>
-        <small>&copy; Mana Pottery</small>
+      <div class="footer-col">
+        <strong>Shop</strong>
+        <p><a href="deals.html">Deals</a> | <a href="kitchen.html">Kitchen</a> | <a href="garden.html">Garden</a> | <a href="decorative.html">Decorative</a></p>
+      </div>
+      <div class="footer-col">
+        <strong>Info</strong>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+        <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+      </div>
+      <div class="footer-col">
+        <small>&copy; Mana Pottery — All rights reserved.</small>
       </div>
     </div>
   </footer>
+
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close">Close</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const decorativeGrid = document.getElementById("decorativeGrid");
+      const decorativeItems = [
+        { name: "Handcrafted Vase", price: "₹1200", img: "images/decor1.jpg" },
+        { name: "Wall Plate", price: "₹950", img: "images/decor2.jpg" },
+        { name: "Candle Holder", price: "₹1500", img: "images/decor3.jpg" },
+      ];
+
+      decorativeItems.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <h4>${item.name}</h4>
+          <div class="price">${item.price}</div>
+          <button>Add to Cart</button>
+        `;
+        decorativeGrid.appendChild(card);
+      });
+    });
+  </script>
 </body>
 </html>

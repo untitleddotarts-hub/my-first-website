@@ -6,23 +6,41 @@
   <title>Kitchen Items — Mana Pottery</title>
   <link rel="stylesheet" href="css/styles.css">
   <script defer src="js/script.js"></script>
+  <script defer src="js/auth.js"></script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header snapdeal-header">
+    <section id="welcome-section" class="welcome-section"></section>
+
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <h1>Mana Pottery</h1>
-        <p class="tagline">Where Hands Shape Heritage</p>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="deals.html">Deals</a>
-        <a href="garden.html">Garden Items</a>
-        <a href="decorative.html">Decorative Items</a>
-        <a href="contact.html">Contact (Praveen)</a>
-      </nav>
+      <div class="header-left">
+        <a class="brand" href="index.html">
+          <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:32px;vertical-align:middle;margin-right:8px;">
+          <span style="font-size:22px;font-weight:700;vertical-align:middle;color:#fff;">Mana Pottery</span>
+        </a>
+      </div>
+
+      <div class="header-center">
+        <input type="text" class="search-bar" placeholder="Search kitchen pottery...">
+      </div>
+
+      <div class="header-right">
+        <a href="cart.html" class="icon-link" title="Cart">🛒</a>
+        <a id="auth-link" href="signin.html" class="icon-link" title="Sign In">👤</a>
+      </div>
     </div>
+
+    <nav class="snapdeal-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="deals.html">Deals</a>
+      <a href="kitchen.html">Kitchen Items</a>
+      <a href="garden.html">Garden Items</a>
+      <a href="decorative.html">Decorative Items</a>
+      <a href="contact.html">Contact (Praveen)</a>
+      <a id="auth_link" href="signin.html">👤 Sign In</a>
+      <a href="cart.html">Cart</a>
+    </nav>
   </header>
 
   <main class="container">
@@ -31,15 +49,50 @@
     <div id="kitchenGrid" class="product-grid"></div>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer snapdeal-footer">
     <div class="container footer-inner">
-      <div>
+      <div class="footer-col">
         <strong>Mana Pottery</strong>
+        <p>Where Hands Shape Heritage</p>
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
       </div>
-      <div>
-        <small>&copy; Mana Pottery</small>
+      <div class="footer-col">
+        <strong>Shop</strong>
+        <p><a href="deals.html">Deals</a> | <a href="kitchen.html">Kitchen</a> | <a href="garden.html">Garden</a> | <a href="decorative.html">Decorative</a></p>
+      </div>
+      <div class="footer-col">
+        <strong>Info</strong>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+        <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+      </div>
+      <div class="footer-col">
+        <small>&copy; Mana Pottery — All rights reserved.</small>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Optional: dynamic product example for kitchen
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("kitchenGrid");
+      const kitchenProducts = [
+        { name: "Clay Dinner Plate", price: "₹450", img: "images/kitchen1.jpg" },
+        { name: "Handcrafted Bowl Set", price: "₹750", img: "images/kitchen2.jpg" },
+        { name: "Rustic Mug", price: "₹320", img: "images/kitchen3.jpg" },
+      ];
+
+      kitchenProducts.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.name}">
+          <h4>${p.name}</h4>
+          <div class="price">${p.price}</div>
+          <button>Add to Cart</button>
+        `;
+        grid.appendChild(card);
+      });
+    });
+  </script>
 </body>
 </html>

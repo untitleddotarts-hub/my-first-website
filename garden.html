@@ -6,35 +6,40 @@
   <title>Garden Items — Mana Pottery</title>
   <link rel="stylesheet" href="css/styles.css">
   <script defer src="js/script.js"></script>
+  <script defer src="js/auth.js"></script>
 </head>
 <body>
   <header class="site-header snapdeal-header">
+    <section id="welcome-section" class="welcome-section"></section>
+
     <div class="container header-inner">
       <div class="header-left">
         <a class="brand" href="index.html">
-      <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:40px;vertical-align:middle;margin-right:12px;">
-      <span class="brand-title">Mana Pottery</span>
-      <span class="tagline">Where Hands Shape Heritage</span>
+          <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:32px;vertical-align:middle;margin-right:8px;">
+          <span style="font-size:22px;font-weight:700;vertical-align:middle;color:#fff;">Mana Pottery</span>
         </a>
       </div>
+
       <div class="header-center">
-        <input type="text" class="search-bar" placeholder="Search pottery, kitchenware, garden...">
+        <input type="text" class="search-bar" placeholder="Search garden pottery...">
       </div>
+
       <div class="header-right">
-        <a href="#" class="icon-link" title="Cart"><span style="font-size:22px;">🛒</span></a>
-        <a href="#" class="icon-link" title="Sign In"><span style="font-size:22px;">👤</span></a>
+        <a href="cart.html" class="icon-link" title="Cart">🛒</a>
+        <a id="auth-link" href="signin.html" class="icon-link" title="Sign In">👤</a>
       </div>
     </div>
+
     <nav class="snapdeal-nav">
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="deals.html">Deals</a>
-  <a href="kitchen.html">Kitchen Items</a>
-  <a href="garden.html">Garden Items</a>
-  <a href="decorative.html">Decorative Items</a>
-  <a href="contact.html">Contact (Praveen)</a>
-  <a href="signin.html">Sign In</a>
-  <a href="cart.html">Cart</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="deals.html">Deals</a>
+      <a href="kitchen.html">Kitchen Items</a>
+      <a href="garden.html">Garden Items</a>
+      <a href="decorative.html">Decorative Items</a>
+      <a href="contact.html">Contact (Praveen)</a>
+      <a id="auth_link" href="signin.html">👤 Sign In</a>
+      <a href="cart.html">Cart</a>
     </nav>
   </header>
 
@@ -61,13 +66,14 @@
             <label>Price:
               <select id="priceFilter">
                 <option value="all">All</option>
-                <option value="low">Under $30</option>
-                <option value="mid">$30 - $70</option>
-                <option value="high">Above $70</option>
+                <option value="low">Under ₹1000</option>
+                <option value="mid">₹1000 - ₹3000</option>
+                <option value="high">Above ₹3000</option>
               </select>
             </label>
           </div>
         </aside>
+
         <main class="content">
           <div class="sort-row">
             <h3 style="margin:0">Garden Collection</h3>
@@ -108,11 +114,34 @@
     </div>
   </footer>
 
-        <div id="productModal" class="modal" aria-hidden="true">
-          <div class="modal-content" role="dialog" aria-modal="true">
-            <button id="modalClose" class="modal-close">Close</button>
-            <div id="modalBody"></div>
-          </div>
-        </div>
-      </body>
-      </html>
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close">Close</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const gardenGrid = document.getElementById("gardenGrid");
+      const gardenProducts = [
+        { name: "Terracotta Planter", price: "₹1200", img: "images/garden1.jpg" },
+        { name: "Hanging Pot", price: "₹850", img: "images/garden2.jpg" },
+        { name: "Decorative Bird Bath", price: "₹2500", img: "images/garden3.jpg" },
+      ];
+
+      gardenProducts.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <img src="${p.img}" alt="${p.name}">
+          <h4>${p.name}</h4>
+          <div class="price">${p.price}</div>
+          <button>Add to Cart</button>
+        `;
+        gardenGrid.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -6,46 +6,106 @@
   <title>Deals — Mana Pottery</title>
   <link rel="stylesheet" href="css/styles.css">
   <script defer src="js/script.js"></script>
+  <script defer src="js/auth.js"></script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header snapdeal-header">
+    <section id="welcome-section" class="welcome-section"></section>
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <h1>Mana Pottery</h1>
-        <p class="tagline">Where Hands Shape Heritage</p>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="kitchen.html">Kitchen Items</a>
-        <a href="garden.html">Garden Items</a>
-        <a href="decorative.html">Decorative Items</a>
-        <a href="contact.html">Contact (Praveen)</a>
-      </nav>
+      <div class="header-left">
+        <a class="brand" href="index.html">
+          <img src="images/product1.svg" alt="Mana Pottery Logo" style="height:32px;vertical-align:middle;margin-right:8px;">
+          <span style="font-size:22px;font-weight:700;vertical-align:middle;color:#fff;">Mana Pottery</span>
+        </a>
+      </div>
+      <div class="header-center">
+        <input type="text" class="search-bar" placeholder="Search pottery, kitchenware, garden...">
+      </div>
+      <div class="header-right">
+        <a href="cart.html" class="icon-link" title="Cart">🛒</a>
+        <a href="signin.html" class="icon-link" id="auth_link" title="Sign In">👤</a>
+      </div>
     </div>
+    <nav class="snapdeal-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="deals.html">Deals</a>
+      <a href="kitchen.html">Kitchen Items</a>
+      <a href="garden.html">Garden Items</a>
+      <a href="decorative.html">Decorative Items</a>
+      <a href="contact.html">Contact (Praveen)</a>
+      <a id="auth_link" href="signin.html">👤 Sign In</a>
+      <a href="cart.html">Cart</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <h2>Current Deals & Offers</h2>
-    <p>Below are curated items offered at special prices for a limited time. Deals change periodically — check back often or contact Praveen for bulk discounts.</p>
-
-    <div id="dealsGrid" class="product-grid"></div>
-
-    <section>
-      <h3>Wholesale & Bulk Orders</h3>
-      <p>For businesses and restaurants, we offer tiered pricing and customization. Contact Praveen for a quote and lead times.</p>
+  <main>
+    <section class="hero small">
+      <div class="container">
+        <h2>Current Deals & Offers</h2>
+        <p class="lead">Exclusive discounts on our handcrafted pottery — seasonal specials and limited-time offers!</p>
+      </div>
     </section>
+
+    <div class="container">
+      <section id="dealsGrid" class="product-grid">
+        <!-- Products loaded dynamically -->
+      </section>
+
+      <section style="margin-top: 40px;">
+        <h3>Wholesale & Bulk Orders</h3>
+        <p>For restaurants, boutiques, and decorators — we offer tiered pricing and custom glazes. Contact <strong>Praveen</strong> for quotes and lead times.</p>
+      </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer snapdeal-footer">
     <div class="container footer-inner">
-      <div>
+      <div class="footer-col">
         <strong>Mana Pottery</strong>
+        <p>Where Hands Shape Heritage</p>
+        <p><a href="about.html">About Us</a> | <a href="contact.html">Contact</a></p>
       </div>
-      <div>
-        <small>&copy; Mana Pottery</small>
+      <div class="footer-col">
+        <strong>Shop</strong>
+        <p><a href="deals.html">Deals</a> | <a href="kitchen.html">Kitchen</a> | <a href="garden.html">Garden</a> | <a href="decorative.html">Decorative</a></p>
+      </div>
+      <div class="footer-col">
+        <strong>Info</strong>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+        <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+      </div>
+      <div class="footer-col">
+        <small>&copy; Mana Pottery — All rights reserved.</small>
       </div>
     </div>
   </footer>
+
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="modalClose" class="modal-close">Close</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const deals = [
+      {name: "Earthen Dinner Plate", price: "$25", img: "images/product1.jpg"},
+      {name: "Rustic Serving Bowl", price: "$32", img: "images/product2.jpg"},
+      {name: "Hand-Glazed Vase", price: "$45", img: "images/product3.jpg"},
+      {name: "Clay Mug Set (x2)", price: "$20", img: "images/product4.jpg"},
+    ];
+    const grid = document.getElementById("dealsGrid");
+    grid.innerHTML = deals.map(d => `
+      <div class="product-card">
+        <img src="${d.img}" alt="${d.name}">
+        <h4>${d.name}</h4>
+        <div class="price">${d.price}</div>
+        <button class="btn">Add to Cart</button>
+      </div>
+    `).join("");
+  });
+  </script>
 </body>
 </html>

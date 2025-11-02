@@ -5,13 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cart - Mana Pottery</title>
   <link rel="stylesheet" href="css/styles.css">
- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function() {
-    emailjs.init("w5riom0iCJbrIqp8c"); // Replace with your actual public key
-  })();
-</script>
+
+  <!-- EmailJS integration -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("w5riom0iCJbrIqp8c"); // Replace with your actual public key
+    })();
+  </script>
+
+  <!-- Cart functionality -->
   <script defer src="js/cart.js"></script>
+
+  <!-- Auth functionality -->
+  <script defer src="js/auth.js"></script>
 </head>
 <body>
   <header class="site-header snapdeal-header">
@@ -23,6 +30,7 @@
         </a>
       </div>
     </div>
+
     <nav class="snapdeal-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
@@ -31,10 +39,11 @@
       <a href="garden.html">Garden Items</a>
       <a href="decorative.html">Decorative Items</a>
       <a href="contact.html">Contact (Praveen)</a>
-      <a href="signin.html">Sign In</a>
-      <a href="cart.html">Cart</a>
+      <a id="auth_link" href="signin.html">👤 Sign In</a>
+      <a href="cart.html">🛒 Cart</a>
     </nav>
   </header>
+
   <main>
     <section class="cart-section">
       <div class="container">
@@ -43,5 +52,16 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Mana Pottery</strong>
+      </div>
+      <div>
+        <small>&copy; Mana Pottery</small>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
