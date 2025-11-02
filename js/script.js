@@ -1,15 +1,77 @@
 // Mana Pottery — centralized product data and rendering (clean LG-enabled version)
 const products = [
-  { id: 1, name: 'Kitchen Set - Rustic Bowl', description: 'Hand-thrown bowl, microwave and dishwasher safe.', category: 'Kitchen', price: 24.99, img: 'images/product1.svg' },
-  { id: 2, name: 'Serving Platter', description: 'Oval platter for family-style serving.', category: 'Kitchen', price: 39.99, img: 'images/product2.svg' },
-  { id: 3, name: 'Heritage Planter', description: 'Frost-resistant planter with drainage.', category: 'Garden', price: 49.99, img: 'images/product3.svg' },
-  { id: 4, name: 'Bird Bath', description: 'Decorative bird bath with hand-glazed finish.', category: 'Garden', price: 89.99, img: 'images/product4.svg' },
-  { id: 5, name: 'Tea Set - Four Cup', description: 'Elegant tea set, perfect for gatherings.', category: 'Kitchen', price: 74.99, img: 'images/product5.svg' },
-  { id: 6, name: 'Garden Lantern', description: 'Handcrafted lantern for ambient garden light.', category: 'Garden', price: 59.99, img: 'images/product6.svg' },
-  { id: 7, name: 'Decorative Vase', description: 'Statement vase with matte glaze.', category: 'Decorative', price: 69.99, img: 'images/product7.svg' },
-  { id: 8, name: 'Wall Tile - Pattern', description: 'Artisan tile for indoor/outdoor walls.', category: 'Decorative', price: 12.99, img: 'images/product8.svg' },
-  { id: 9, name: 'Soup Mug', description: 'Large-handled mug for soups & stews.', category: 'Kitchen', price: 18.99, img: 'images/product9.svg' },
-  { id: 10, name: 'Garden Marker Set', description: 'Ceramic markers to label your plants.', category: 'Garden', price: 14.99, img: 'images/product10.svg' }
+  { 
+    id: 1, 
+    name: 'Biryani Pot', 
+    description: 'Traditional terracotta biryani pot designed for slow-cooking rich and flavorful biryanis. Retains natural aroma and moisture.', 
+    category: 'Kitchen', 
+    price: 299, 
+    img: 'images/biryani-pot.jpg' 
+  },
+  { 
+    id: 2, 
+    name: 'Rice Pot', 
+    description: 'Classic clay rice pot that keeps your rice warm and fluffy for hours. Perfect for everyday use and festive meals.', 
+    category: 'Kitchen', 
+    price: 249, 
+    img: 'images/rice-pot.jpg' 
+  },
+  { 
+    id: 3, 
+    name: 'Fish Curry Pot', 
+    description: 'Handcrafted earthen pot ideal for preparing coastal-style fish curries. Enhances flavor with even heat distribution.', 
+    category: 'Kitchen', 
+    price: 249, 
+    img: 'images/fish-curry-pot.jpg' 
+  },
+  { 
+    id: 4, 
+    name: 'Coffee Cups (Set of 3)', 
+    description: 'Elegant handmade terracotta coffee cup set. Keeps beverages warm and adds rustic charm to your table.', 
+    category: 'Kitchen', 
+    price: 99, 
+    img: 'images/coffee-cups.jpg' 
+  },
+  { 
+    id: 5, 
+    name: 'Curd and Milk Pots', 
+    description: 'Eco-friendly clay cups perfect for serving curd, milk, or desserts. Naturally cool and chemical-free.', 
+    category: 'Kitchen', 
+    price: 99, 
+    img: 'images/curd-milk-cups.jpg' 
+  },
+  { 
+    id: 6, 
+    name: 'Curry Pots', 
+    description: 'Set of small terracotta curry cups ideal for serving traditional dishes or chutneys. Earthy and elegant.', 
+    category: 'Kitchen', 
+    price: 149, 
+    img: 'images/curry-cups.jpg' 
+  },
+  { 
+    id: 7, 
+    name: 'Water Bottle', 
+    description: 'Natural clay water bottles that keep your water cool, fresh, and naturally enriched with minerals.', 
+    category: 'Everyday Use', 
+    price: 99, 
+    img: 'images/water-bottle.jpg' 
+  },
+  { 
+    id: 8, 
+    name: 'Terracotta Bells', 
+    description: 'Beautifully handcrafted terracotta bells with soothing sound, perfect for home décor or garden spaces.', 
+    category: 'Decorative', 
+    price: 199, 
+    img: 'images/terracotta-bells.jpg' 
+  },
+  { 
+    id: 9, 
+    name: 'Thulasi Pot', 
+    description: 'Sacred clay Thulasi pot handcrafted for spiritual and aesthetic beauty. Symbol of purity in every Indian home.', 
+    category: 'Decorative', 
+    price: 249, 
+    img: 'images/thulasi-pot.jpg' 
+  }
 ];
 
 function createCard(p){
